@@ -12,7 +12,7 @@
             <h1>Scheduled Matches</h1>
             <p class="subtitle">Retrieve the Makuuchi torikumi for a basho day. Enable spoilers to reveal winner and kimarite.</p>
             <div class="top-nav">
-                <a href="index.html">Back to API Explorer</a>
+                <a href="sumo_api_explorer.html">Back to API Explorer</a>
             </div>
         </section>
 
@@ -20,13 +20,24 @@
             <aside class="panel">
                 <div class="panel-header">
                     <h2>Lookup</h2>
-                    <p>Uses GET /api/basho/:bashoId/torikumi/makuuchi/:day</p>
+                    <p>Uses GET /api/basho/:bashoId/torikumi/:division/:day</p>
                 </div>
                 <div class="panel-body">
                     <form id="matches-form">
                         <div class="field-row">
                             <label for="basho_id">Basho ID</label>
                             <input id="basho_id" name="basho_id" value="202405" placeholder="Example: 202405">
+                        </div>
+                        <div class="field-row">
+                            <label for="division">Division</label>
+                            <select id="division", name="division", value="makuuchi", plaeholder="Makuuchi">
+                                <option value="makuuchi">Makuuchi</option>
+                                <option value="juryo">Juryo</option>
+                                <option value="makushita">Makushita</option>
+                                <option value="sandanme">Sandanme</option>
+                                <option value="jonidan">Jonidan</option>
+                                <option value="jonokuchi">Jonokuchi</option>
+                            </select    >
                         </div>
                         <div class="field-row">
                             <label for="day">Day</label>
