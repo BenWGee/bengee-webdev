@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sumo API Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>Sumo API Explorer</h1>
+            <p class="subtitle">Retrieve live Sumo API data and render responses in a table from a static Neocities page.</p>
+            <div class="hero-nav">
+                <a href="scheduled-matches.html">Open Scheduled Matches Page</a>
+            </div>
+        </section>
+
+        <div class="layout">
+            <aside class="stack">
+                <section class="panel config-panel">
+                    <form id="explorer-form">
+                        <div class="field-row">
+                            <label for="endpoint">Endpoint</label>
+                            <select id="endpoint" name="endpoint"></select>
+                            <p class="hint">Base URL: <span id="api-base-url"></span></p>
+                        </div>
+
+                        <div id="path-fields" class="field-grid"></div>
+
+                        <div class="field-grid">
+                            <div class="field-row">
+                                <label for="limit">Limit</label>
+                                <input id="limit" name="limit" placeholder="Example: 25">
+                            </div>
+                            <div class="field-row">
+                                <label for="skip">Skip</label>
+                                <input id="skip" name="skip" placeholder="Example: 0">
+                            </div>
+                            <div class="field-row">
+                                <label for="intai">Intai</label>
+                                <input id="intai" name="intai" placeholder="true or false">
+                            </div>
+                            <div class="field-row">
+                                <label for="shikonaEn">Shikona EN</label>
+                                <input id="shikonaEn" name="shikonaEn" placeholder="Name filter">
+                            </div>
+                        </div>
+
+                        <div class="button-row">
+                            <button type="submit">Fetch Data</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2>Documented Endpoints</h2>
+                        <p>Reference list from the original Flask version.</p>
+                    </div>
+                    <div class="config-panel">
+                        <ol class="endpoint-list">
+                            <li>GET /api/rikishis</li>
+                            <li>GET /api/rikishi/:rikishiId</li>
+                            <li>GET /api/rikishi/:rikishiId/stats</li>
+                            <li>GET /api/rikishi/:rikishiId/matches</li>
+                            <li>GET /api/rikishi/:rikishiId/matches/:opponentId</li>
+                            <li>GET /api/basho/:bashoId</li>
+                            <li>GET /api/basho/:bashoId/banzuke/:division</li>
+                            <li>GET /api/basho/:bashoId/torikumi/:division/:day</li>
+                            <li>GET /api/kimarite</li>
+                            <li>GET /api/kimarite/:kimarite</li>
+                            <li>GET /api/measurements</li>
+                            <li>GET /api/ranks</li>
+                            <li>GET /api/shikonas</li>
+                        </ol>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Response Viewer</h2>
+                    <p>Nested JSON is flattened into dot-notated columns to keep table output readable.</p>
+                </div>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <strong>Selected Endpoint</strong>
+                        <span id="meta-endpoint">-</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Request Path</strong>
+                        <span id="meta-path">Not built yet</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Request URL</strong>
+                        <span id="meta-url">No request sent</span>
+                    </div>
+                </div>
+
+                <div id="error-message" class="error hidden"></div>
+                <div id="warning-message" class="warning hidden"></div>
+
+                <div id="table-shell" class="table-shell hidden"></div>
+                <div id="empty-state" class="empty-state">Submit a request to view data.</div>
+
+                <div id="json-shell" class="json-shell hidden">
+                    <h3>Raw JSON</h3>
+                    <pre id="raw-json"></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        if (!window.SUMO_EXPLORER_BOOTED) {
+            var errorElement = document.getElementById("error-message");
+            var emptyState = document.getElementById("empty-state");
+            if (errorElement) {
+                errorElement.textContent = "The app.js file did not load. On Neocities this is usually a missing upload or filename case mismatch (app.js vs App.js).";
+                errorElement.classList.remove("hidden");
+            }
+            if (emptyState) {
+                emptyState.textContent = "Upload app.js and reload this page.";
+            }
+        }
+    </script>
+</body>
+</html>

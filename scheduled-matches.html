@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scheduled Matches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>Scheduled Matches</h1>
+            <p class="subtitle">Retrieve the Makuuchi torikumi for a basho day. Enable spoilers to reveal winner and kimarite.</p>
+            <div class="top-nav">
+                <a href="index.html">Back to API Explorer</a>
+            </div>
+        </section>
+
+        <div class="layout">
+            <aside class="panel">
+                <div class="panel-header">
+                    <h2>Lookup</h2>
+                    <p>Uses GET /api/basho/:bashoId/torikumi/makuuchi/:day</p>
+                </div>
+                <div class="panel-body">
+                    <form id="matches-form">
+                        <div class="field-row">
+                            <label for="basho_id">Basho ID</label>
+                            <input id="basho_id" name="basho_id" value="202405" placeholder="Example: 202405">
+                        </div>
+                        <div class="field-row">
+                            <label for="day">Day</label>
+                            <input id="day" name="day" value="1" placeholder="Example: 1">
+                        </div>
+                        <div class="checkbox-row">
+                            <input id="spoiler" name="spoiler" type="checkbox">
+                            <label for="spoiler">Show results and winner</label>
+                        </div>
+                        <button type="submit">Load Matches</button>
+                    </form>
+                </div>
+            </aside>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Torikumi</h2>
+                    <p>The table adapts to content and can hide spoiler fields until enabled.</p>
+                </div>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <strong>Basho</strong>
+                        <span id="meta-basho">-</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Day</strong>
+                        <span id="meta-day">-</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Division</strong>
+                        <span id="meta-division">Makuuchi</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Matches</strong>
+                        <span id="meta-count">0</span>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Location</strong>
+                        <span id="meta-location">-</span>
+                    </div>
+                </div>
+
+                <div id="error-message" class="error hidden"></div>
+                <div id="warning-message" class="warning hidden"></div>
+
+                <div id="table-shell" class="table-shell hidden"></div>
+                <div id="empty-state" class="empty-state">
+                    <p>No matches loaded yet.</p>
+                    <ol class="hint-list">
+                        <li>Enter a basho ID such as 202405.</li>
+                        <li>Enter a day number such as 1.</li>
+                        <li>Enable spoilers only if you want winner and kimarite shown.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="scheduled-matches.js"></script>
+    <script>
+        if (!window.SUMO_MATCHES_BOOTED) {
+            var errorElement = document.getElementById("error-message");
+            var emptyState = document.getElementById("empty-state");
+            if (errorElement) {
+                errorElement.textContent = "The scheduled-matches.js file did not load. On Neocities this is usually a missing upload or filename case mismatch.";
+                errorElement.classList.remove("hidden");
+            }
+            if (emptyState) {
+                emptyState.textContent = "Upload scheduled-matches.js and reload this page.";
+            }
+        }
+    </script>
+</body>
+</html>
