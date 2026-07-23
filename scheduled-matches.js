@@ -47,12 +47,12 @@ async function fetchJson(url) {
     return response.json();
 }
 
-async function buildPreMatchRecords(bashoId, day, rikishiIds) {
+async function buildPreMatchRecords(bashoId, division, day, rikishiIds) {
     const records = new Map();
     rikishiIds.forEach((rikishiId) => records.set(rikishiId, emptyRecord()));
 
     for (let previousDay = 1; previousDay < day; previousDay += 1) {
-        const url = `${API_BASE_URL}/api/basho/${encodeURIComponent(bashoId)}/torikumi/makuuchi/${previousDay}`;
+        const url = `${API_BASE_URL}/api/basho/${encodeURIComponent(bashoId)}/torikumi/${division}/${previousDay}`;
         const payload = await fetchJson(url);
 
         if (!payload || typeof payload !== "object") {
@@ -98,13 +98,13 @@ async function buildPreMatchRecords(bashoId, day, rikishiIds) {
     return records;
 }
 
-async function getScheduledMatches(bashoId, dayString) {
+async function getScheduledMatches(bashoId, division, dayString) {
     const day = toInt(dayString, "Day");
     if (day < 1) {
         throw new Error("Day must be 1 or greater.");
     }
 
-    const requestPath = `/api/basho/${encodeURIComponent(bashoId)}/torikumi/makuuchi/${day}`;
+    const requestPath = `/api/basho/${encodeURIComponent(bashoId)}/torikumi/${division}/${day}`;
     const payload = await fetchJson(`${API_BASE_URL}${requestPath}`);
 
     if (!payload || typeof payload !== "object") {
@@ -129,7 +129,7 @@ async function getScheduledMatches(bashoId, dayString) {
         }
     });
 
-    const preMatchRecords = await buildPreMatchRecords(bashoId, day, rikishiIds);
+    const preMatchRecords = await buildPreMatchRecords(bashoId, division, day, rikishiIds);
 
     const enrichedMatches = matches
         .filter((match) => match && typeof match === "object")
@@ -245,13 +245,14 @@ async function loadMatches(form) {
     showMessage(warningElement, "");
 
     const bashoId = cleanValue(form.elements.basho_id.value);
+    const division = cleanValue(form.elements.division.value)
     const day = cleanValue(form.elements.day.value);
     const showSpoilers = form.elements.spoiler.checked;
 
     writeQueryParams({ basho_id: bashoId, day, spoiler: showSpoilers ? "1" : "" });
 
     try {
-        const { summary, matches } = await getScheduledMatches(bashoId, day);
+        const { summary, matches } = await getScheduledMatches(bashoId, division, day);
 
         setMeta(summary);
 
@@ -275,6 +276,7 @@ function initialize() {
     const initialValues = readInitialValues();
 
     form.elements.basho_id.value = initialValues.basho_id;
+    form.elements.division.value = initialValues.basho_id;
     form.elements.day.value = initialValues.day;
     form.elements.spoiler.checked = initialValues.spoiler;
 
