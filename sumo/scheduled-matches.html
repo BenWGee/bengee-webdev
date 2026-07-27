@@ -26,7 +26,20 @@
                     <form id="matches-form">
                         <div class="field-row">
                             <label for="basho_year">Basho Year</label>
-                            <input id="basho_year" name="basho_year" value="2026" placeholder="Example: 2026">
+                            <select id="basho_year" name="basho_year">
+                                <option value="">Select year</option>
+                                <script>
+                                    const startYear = 1958;
+                                    const currentYear = new Date().getFullYear();
+                                    const select = document.getElementById('basho_year');
+                                    for (let y = currentYear; y >= startYear; y--) {
+                                        const opt = document.createElement('option');
+                                        opt.value = y;
+                                        opt.textContent = y;
+                                        select.appendChild(opt);
+                                    }
+                                </script>
+                            </select>
                         </div>
                         <div class="field-row">
                             <label for="basho_month">Basho Month</label>
