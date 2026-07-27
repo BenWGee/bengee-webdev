@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banzuke</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--
+GET /api/basho/:bashoId/banzuke/:division
+
+Using the current nearest odd numbered month to return the banzuke of a given division. If the bashoId is not provided, it will default to the current nearest odd numbered month. The division can be one of the following: makuuchi, juryo, makushita, sandanme, jonidan, jonokuchi.
+-->
+
+<body>
+    <main>
+        <section class="hero">
+            <h1>Banzuke</h1>
+            <p class="subtitle">Retrieve the banzuke for a basho. Enable spoilers to reveal rank and record.</p>
+            <div class="top-nav">
+                <a href="sumo_api_explorer.html">Back to API Explorer</a>
+            </div>
+        </section>
+
+        <div class="layout">
+            <aside class="panel">
+                <div class="panel-header">
+                    <h2>Lookup</h2>
+                    <p>Uses GET /api/basho/:bashoId/banzuke/:division</p>
+                </div>
+                <div class="panel-body">
+                    <form id="banzuke-form">
+                        <div class="field-row">
+                            <label for="division">Division</label>
+                            <select id="division" name="division" value="makuuchi" placeholder="Example: makuuchi">
+                                <option value="makuuchi">Makuuchi</option>
+                                <option value="juryo">Juryo</option>
+                                <option value="makushita">Makushita</option>
+                                <option value="sandanme">Sandanme</option>
+                                <option value="jonidan">Jonidan</option>
+                                <option value="jonokuchi">Jonokuchi</option>
+                            </select>
+                        </div>
+                        <div class="field-row">
+                            <label for="basho_year">Basho Year</label>
+                            <select id="basho_year" name="basho_year">
+                                <option value="">Select year</option>
+                                <script>
+                                    const startYear = 1958;
+                                    const currentYear = new Date().getFullYear();
+                                    const select = document.getElementById('basho_year');
+                                    for (let y = currentYear; y >= startYear; y--) {
+                                        const opt = document.createElement('option');
+                                        opt.value = y;
+                                        opt.textContent = y;
+                                        select.appendChild(opt);
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
