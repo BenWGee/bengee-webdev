@@ -228,7 +228,7 @@ function readInitialValues() {
 }
 
 function setMeta(summary) {
-    document.getElementById("meta-basho").textContent = summary.bashoId || "-";
+    document.getElementById("meta-basho").textContent = summary.basho || "-";
     document.getElementById("meta-day").textContent = String(summary.day || "-");
     document.getElementById("meta-division").textContent = summary.division || "Makuuchi";
     document.getElementById("meta-count").textContent = String(summary.matchCount || 0);
@@ -244,8 +244,10 @@ async function loadMatches(form) {
     showMessage(errorElement, "");
     showMessage(warningElement, "");
 
-    const bashoId = cleanValue(form.elements.basho_id.value);
-    const division = cleanValue(form.elements.division.value)
+    const bashoYear = cleanValue(form.elements.basho_year.value);
+    const bashoMonth = cleanValue(form.elements.basho_month.value);
+    const bashoId = `${bashoYear}${bashoMonth}`;
+    const division = cleanValue(form.elements.division.value);
     const day = cleanValue(form.elements.day.value);
     const showSpoilers = form.elements.spoiler.checked;
 
@@ -275,8 +277,9 @@ function initialize() {
     const form = document.getElementById("matches-form");
     const initialValues = readInitialValues();
 
-    form.elements.basho_id.value = initialValues.basho_id;
-    form.elements.division.value = initialValues.basho_id;
+    form.elements.basho_year.value = initialValues.basho_year || "2026";
+    form.elements.basho_month.value = initialValues.basho_month || "01";
+    form.elements.division.value = initialValues.division || "makuuchi";
     form.elements.day.value = initialValues.day;
     form.elements.spoiler.checked = initialValues.spoiler;
 
