@@ -22,20 +22,29 @@ function formatRecord(record) {
     return `${record.wins}-${record.losses}`;
 }
 
-function classifyRecord(record, day) {
-    const wins = record.wins;
-    const remainingMatches = Math.max(0, 16 - day);
+function classifyRecord(record, day, division) {
 
-    if (wins >= 8) {
-        return { status: "winning", label: "Winning record" };
+    const wins = record.wins;
+
+    if (division === "makushita" || division === "sandanme" || division === "jonidan" || division === "jonokuchi") {
+        var remainingMatches = Math.max(0, 7 - day);
+        var winningThreshold = 4;
     }
-    if (wins === 7) {
-        return { status: "bubble", label: "One win from a winning record" };
+
+    else{
+        var remainingMatches = Math.max(0, 16 - day);
+        var winningThreshold = 8;
     }
-    if (wins + remainingMatches >= 8) {
-        return { status: "alive", label: "Can still reach eight wins" };
+    if (wins >= winningThreshold) {
+        return { status: "winning", label: "Kachi-koshi" };
     }
-    return { status: "eliminated", label: "Cannot reach eight wins" };
+    if (wins === winningThreshold - 1) {
+        return { status: "bubble", label: "One win from Kachi-koshi" };
+    }
+    if (wins + remainingMatches >= winningThreshold) {
+        return { status: "alive", label: "Can still reach Kachi-koshi" };
+    }
+    return { status: "eliminated", label: "Cannot reach Kachi-koshi" };
 }
 
 async function fetchJson(url) {
