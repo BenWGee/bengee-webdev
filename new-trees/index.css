@@ -1,0 +1,115 @@
+body {
+    font-family: 'Cormorant', serif;
+}
+
+h1 {
+    display: inline-block;
+    font-weight: 400;
+    margin: 0;
+    margin-right: 32px;
+}
+
+.links {
+    display: inline-block;
+}
+
+.links li{
+    display: inline-block;
+}
+
+.links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin: 0 8px;
+}
+
+.links ul {
+    padding: 0;
+}
+.navbar {
+    margin: 32px;
+}
+
+a.active {
+    border-bottom: 1px solid black;
+}
+.card {
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.card img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card img:hover {
+    opacity: 0.9;
+}
+
+.card h2 {
+    display: inline-block;
+    margin: 8px 0 16px 0;
+    font-weight: 300;
+}
+
+.gallery {
+    padding: 16px;
+}
+
+.about {
+    width: 30%;
+    min-width: 600px;
+    margin: 100px 0 100px 200px;
+
+}
+
+.about h3{
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.contact div {
+    margin-top: 100px;
+}
+
+.contact p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.cta {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .card {
+        width: 100%;
+    }
+
+    .about {
+        margin: 100px 0 100px 100px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        padding: 0;
+    }
+
+    .gallery {
+        padding: 8px;
+    }
+
+    .about {
+        margin: 100px auto;
+        min-width: 500px;
+    }
+}
