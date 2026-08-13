@@ -1,22 +1,22 @@
 [
   {
     "title": "Banzuke",
-    "url": "banzuke.bengee.xyz",
+    "url": "https://banzuke.bengee.xyz",
     "icon": "🏯"
   },
   {
     "title": "MTG Articles",
-    "url": "341.bengee.xyz",
+    "url": "https://341.bengee.xyz",
     "icon": "📝"
   },
   {
     "title": "New Trees",
-    "url": "https://www.youtube.com",
+    "url": "https://new-trees.bengee.xyz",
     "icon": "🌳"
   },
   {
     "title": "Moxfield",
-    "url": "moxfield.bengee.xyz",
+    "url": "https://moxfield.bengee.xyz",
     "icon": "💎"
   }
 ]
