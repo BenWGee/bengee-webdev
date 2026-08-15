@@ -11,12 +11,17 @@
   },
   {
     "title": "New Trees",
-    "url": "https://new-trees.bengee.xyz",
+    "url": "https://newtrees.bengee.xyz",
     "icon": "🌳"
   },
   {
     "title": "Moxfield",
     "url": "https://moxfield.bengee.xyz",
     "icon": "💎"
+  },
+  {
+    "title": "Tuesday Night Magic Carlow",
+    "url": "https://discord.gg/meCmWbnZMh",
+    "icon": "✨️"
   }
 ]
