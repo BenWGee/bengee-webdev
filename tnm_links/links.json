@@ -1,27 +1,51 @@
 [
   {
     "title": "Facebook",
+    "type": "link",
     "url": "https://www.facebook.com/p/Tuesday-Night-Magic-Carlow-100087972106758/?locale=ga_IE",
     "icon": "😀"
   },
   {
     "title": "Discord",
+    "type": "link",
     "url": "https://discord.gg/E53Qxcfzfp",
     "icon": "👾"
   },
   {
     "title": "Instagram",
+    "type": "link",
     "url": "https://www.instagram.com/tuesday_night_magic_carlow/",
     "icon": "📷"
   },
   {
     "title": "Email",
+    "type": "link",
     "url": "mailto:tuesdaynightmagiccarlow@gmail.com",
     "icon": "📨"
   },
   {
     "title": "Carpenters Bar & Lounge",
+    "type": "link",
     "url": "https://www.carpentersbar.ie/",
     "icon": "🍻"
+  },
+  {
+    "title": "What do I need to bring?",
+    "type": "text",
+    "content": "€5 weekly club fee, your first night is free!\nBesides that, being a deck. We mainly play the 'Commander' variant.",
+    "icon": "❓"
+  },
+  {
+    "title": "I never played Magic before, can I still come?",
+    "type": "text",
+    "content": "Yes you can. We're happy to teach you how to play. You don't even need a deck, we always have spares.",
+    "icon": "❓"
+  },
+  {
+    "title": "What Magic formats do you play?",
+    "type": "text",
+    "content": "Commander is the most popular. We also play Pauper, Legacy, Vintage, Cube, and Booster Draft. We usually post about other formats on our social media if a non-Commander event is on.",
+    "icon": "❓"
   }
+
 ]
