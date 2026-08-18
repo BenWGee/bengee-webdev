@@ -1,11 +1,5 @@
 [
   {
-    "title": "Facebook",
-    "type": "link",
-    "url": "https://www.facebook.com/p/Tuesday-Night-Magic-Carlow-100087972106758/?locale=ga_IE",
-    "icon": "😀"
-  },
-  {
     "title": "Discord",
     "type": "link",
     "url": "https://discord.gg/E53Qxcfzfp",
@@ -16,6 +10,12 @@
     "type": "link",
     "url": "https://www.instagram.com/tuesday_night_magic_carlow/",
     "icon": "📷"
+  },
+  {
+    "title": "Facebook",
+    "type": "link",
+    "url": "https://www.facebook.com/p/Tuesday-Night-Magic-Carlow-100087972106758/?locale=ga_IE",
+    "icon": "😀"
   },
   {
     "title": "Email",
@@ -32,7 +32,7 @@
   {
     "title": "What do I need to bring?",
     "type": "text",
-    "content": "€5 weekly club fee, your first night is free!\nBesides that, being a deck. We mainly play the 'Commander' variant.",
+    "content": "€5 weekly club fee, your first night is free!\nBesides that, bring a deck. We mainly play the 'Commander' variant.",
     "icon": "❓"
   },
   {
