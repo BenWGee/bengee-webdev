@@ -302,3 +302,38 @@ footer {
   font-style: italic;
   text-shadow: 0 0 14px rgba(255, 47, 176, 0.14);
 }
+
+/* Text block card */
+.link-card--text {
+  width: 100%;
+  text-align: left; /* makes it feel like a block */
+  /* ensure the button uses the same visual style */
+  border-radius: var(--radius);
+}
+
+.link-card--text .link-title {
+  /* keep the title from clipping; it's just the header row */
+  line-height: 1.2;
+}
+
+/* Expand/collapse panel */
+.link-text-panel {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 47, 176, 0.18);
+
+  /* allow normal text flow when shown */
+}
+
+.link-text-content {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+/* Move the arrow closer to the title baseline */
+.link-arrow--chevron {
+  transform: translateY(1px);
+}
