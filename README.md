@@ -1,50 +1,30 @@
-# Neocities Static Sumo API Site
+# Bengee.xyz
 
-This folder contains a static HTML/CSS/JS conversion of the Flask app from `api_requests`.
+This repo hosts my websites. Each folder has something a little different. They are isolated projects with no real connection. However, they are all in the same repo as GitHub only allows one published page.
 
-## Files
+The sections are outlined below. 
 
-- `index.html` - API Explorer page
-- `scheduled-matches.html` - Scheduled matches page
-- `styles.css` - Shared styling
-- `app.js` - Client-side logic for API Explorer
-- `scheduled-matches.js` - Client-side logic for scheduled matches
+ # links and tnm_links
 
-## Publish To Neocities
+ Both folders follow the same idea. They are a "Link Tree" style website. One is for my personal projects, the other is for a Magic the Gathering club I run. 
 
-1. Sign in to your Neocities account.
-2. Open your dashboard file manager.
-3. Upload all files from this folder:
-   - `index.html`
-   - `scheduled-matches.html`
-   - `styles.css`
-   - `app.js`
-   - `scheduled-matches.js`
-4. Make sure `index.html` is in the site root (or the folder you want to serve).
-5. Open your Neocities site URL and verify both pages load.
+ The HTML is populated dynamically using content saved in a json file. Here's a snippet below for the format.
 
-## Local Preview (Optional)
+ ````
+[
+  {
+    "title": "My Repo",
+    "type": "link",
+    "url": "https://github.com/BenWGee/bengee-webdev/tree/main",
+    "icon": "💻"
+  },
+  {
+    "title": "About Me",
+    "type": "text",
+    "content": "Hi, I am a developer",
+    "icon": "🏆"
+  },
+]
+````
 
-Use any static server so browser fetch behaves consistently.
-
-Example from this folder:
-
-```powershell
-python -m http.server 8000
-```
-
-Then open:
-
-- `http://localhost:8000/index.html`
-- `http://localhost:8000/scheduled-matches.html`
-
-## Notes
-
-- The site calls `https://sumo-api.com` directly from the browser.
-- If requests fail on Neocities, check browser developer tools for CORS/network errors.
-- Query params are supported for quick sharing/bookmarking.
-
-### Example URLs
-
-- `index.html?endpoint=rikishi&rikishi_id=1`
-- `scheduled-matches.html?basho_id=202405&day=1&spoiler=1`
+You can copy all the relevant code, then drop in your own json for a personal link site. The text "type" also allows you to publish text instead of links.
