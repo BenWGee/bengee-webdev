@@ -28,3 +28,15 @@ The sections are outlined below.
 ````
 
 You can copy all the relevant code, then drop in your own json for a personal link site. The text "type" also allows you to publish text instead of links.
+
+# new-trees
+
+This is a simple HTML/CSS website that displays some of my photos. The goal was something like a 'zine' but in a digital format. You're welcome to copy the code, but please credit my images if you reuse them anywhere.
+
+# scipts
+
+This contains the JavaSript that powers a couple of the sites. The links and tnm_links pages were so similar I put the script in a shared location to avoid writing the same code twice. 
+
+# sumo 
+
+This is a wrapper for the sumo api. I like sumo wrestling, and wanted to make a little project around it. The first page is a full api explorer. The second page shows a spoiler-free view of the fights for a given day. 
