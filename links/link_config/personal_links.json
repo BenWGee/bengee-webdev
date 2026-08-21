@@ -34,5 +34,12 @@
     "type": "link",
     "content": "https://discord.gg/meCmWbnZMh",
     "icon": "✨️"
+  },
+,
+  {
+    "title": "Build Your Own Link Page",
+    "type": "link",
+    "content": "https://github.com/BenWGee/bengee-webdev/tree/main/links",
+    "icon": "🛠️"
   }
 ]
