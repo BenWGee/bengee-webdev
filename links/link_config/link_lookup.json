@@ -18,7 +18,7 @@
     {
         "name": "entertainment",
         "file": "entertainment_links.json",
-        "theme": "orange dark",
+        "theme": "red light",
         "page_title": "Entertainment Links",
         "page_subtitle": "Sites for when you need a break",
         "page_footer": ""
