@@ -31,4 +31,12 @@
         "page_subtitle": "Sites you want to share",
         "page_footer": "Anyone can do it!"
     }
+    {
+        "name": "tnm",
+        "file": "../../tnm_link/links.json",
+        "theme": "indigo light",
+        "page_title": "Tuesday Night Magic",
+        "page_subtitle": "Every Tuesday, 19:00, Carpenter's Bar & Lounge",
+        "page_footer": ""
+    },
 ]
