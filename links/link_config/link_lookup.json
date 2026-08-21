@@ -30,7 +30,7 @@
         "page_title": "Make Your Own Link Page",
         "page_subtitle": "Sites you want to share",
         "page_footer": "Anyone can do it!"
-    }
+    },
     {
         "name": "tnm",
         "file": "../../tnm_link/links.json",
