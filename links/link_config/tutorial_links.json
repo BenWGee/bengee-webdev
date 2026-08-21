@@ -21,13 +21,7 @@
     "title": "How can people visit my website?",
     "content": "Github has a features called 'Github Pages'. It allows you to host a small website for free. There are some limitations. But nothing that will imapct this project. Follow the Github pages quickstart guide below to get that setup.",
     "type": "text",
-    "icon": "✅"
-  },
-  {
-    "title": "Github Repository",
-    "content": "https://github.com/BenWGee/bengee-webdev",
-    "type": "url",
-    "icon": "💻"
+    "icon": "🌐"
   },
   {
     "title": "Github Repository",
