@@ -1,0 +1,34 @@
+[
+    {
+        "name": "personal",
+        "file": "personal_links.json",
+        "theme": "orange dark",
+        "page_title": "Bengee.xyz  Personal Links",
+        "page_subtitle": "Here's some stuff I like, have a look.",
+        "page_footer": "Check out my Github to make your own!"
+    },
+    {
+        "name": "education",
+        "file": "educational_links.json",
+        "theme": "indigo light",
+        "page_title": "Educational Links",
+        "page_subtitle": "A curated collection of learning resources",
+        "page_footer": "These are some great resources!"
+    },
+    {
+        "name": "entertainment",
+        "file": "entertainment_links.json",
+        "theme": "orange dark",
+        "page_title": "Entertainment Links",
+        "page_subtitle": "Sites for when you need a break",
+        "page_footer": ""
+    },
+    {
+        "name": "tutorial",
+        "file": "tutorial_links.json",
+        "theme": "blue light",
+        "page_title": "Make Your Own Link Page",
+        "page_subtitle": "Sites you want to share",
+        "page_footer": "Anyone can do it!"
+    }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Entertainment Info",
+    "content": "This version shows links to entertainment sites",
+    "type": "text",
+    "icon": "ℹ️"
+  },
+  {
+    "title": "YouTube",
+    "content": "https://www.youtube.com",
+    "type": "url",
+    "icon": "▶️"
+  },
+  {
+    "title": "Vimeo",
+    "content": "https://www.vimeo.com",
+    "type": "url",
+    "icon": "📽️"
+  }
+]

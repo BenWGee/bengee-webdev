@@ -1,0 +1,38 @@
+[
+  {
+    "title": "What is this place?",
+    "type": "text",
+    "content": "These are my links. Mostly projects, or places where I have an online presence.",
+    "icon": "❓"
+  },
+  {
+    "title": "Banzuke",
+    "type": "link",
+    "content": "https://banzuke.bengee.xyz",
+    "icon": "🏯"
+  },
+  {
+    "title": "MTG Articles",
+    "type": "link",
+    "content": "https://341.bengee.xyz",
+    "icon": "📝"
+  },
+  {
+    "title": "New Trees",
+    "type": "link",
+    "content": "https://newtrees.bengee.xyz",
+    "icon": "🌳"
+  },
+  {
+    "title": "Moxfield",
+    "type": "link",
+    "content": "https://moxfield.bengee.xyz",
+    "icon": "💎"
+  },
+  {
+    "title": "Tuesday Night Magic Carlow",
+    "type": "link",
+    "content": "https://discord.gg/meCmWbnZMh",
+    "icon": "✨️"
+  }
+]

@@ -3,28 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bengee.xyz Links</title>
+
+  <!-- Page title is set dynamically by populate-links.js from link_lookup.json -->
+  <title>My Links</title>
+
+  <!-- Lora serif font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    main.css: layout, typography, and component styles.
+    Color variables and background gradients are injected at runtime by
+    populate-links.js as a <style id="dynamic-theme"> element, so no
+    separate theme stylesheet is needed here.
+  -->
+  <link rel="stylesheet" href="../styles/link_style/main.css" />
 </head>
 <body>
+
+  <!-- Page header — text is populated from link_lookup.json; hidden if empty -->
   <header>
-    <h1>Bengee.xyz Links</h1>
-    <p>There is nothing here</p>
-    <p>It's time to go somewhere else</p>
-    <p>Click one of my links</p>
+    <h1 id="page-title"></h1>
+    <p id="page-subtitle"></p>
   </header>
 
+  <!-- Link cards are rendered here by populate-links.js -->
   <main id="link-list" aria-label="Link list">
     <p style="color: var(--text-secondary); text-align: center;">Loading&hellip;</p>
   </main>
 
-  <footer>
-    <span>Clone my <a href="https://github.com/BenWGee/bengee-webdev/tree/main">repo</a> to make your own.</span>
-  </footer>
+  <!-- Footer text is populated from link_lookup.json; hidden if empty -->
+  <footer id="page-footer"></footer>
 
-  <script src="/scripts/populate-links.js"></script>
+  <!--
+    populate-links.js reads the ?type= URL parameter, loads the matching
+    entry from links/link_lookup.json, then fetches and renders the links.
+  -->
+  <script src="../scripts/link_scripts/populate-links.js"></script>
+
 </body>
 </html>

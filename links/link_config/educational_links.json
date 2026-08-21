@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Education Info",
+    "content": "This is a website with some educational links",
+    "type": "text",
+    "icon": "ℹ️"
+  },
+  {
+    "title": "GitHub",
+    "content": "https://www.github.com",
+    "type": "url",
+    "icon": "🐙"
+  },
+  {
+    "title": "Wikipedia",
+    "content": "https://www.wikipedia.org",
+    "type": "url",
+    "icon": "📖"
+  },
+  {
+    "title": "MDN Web Docs",
+    "content": "https://developer.mozilla.org",
+    "type": "url",
+    "icon": "🌐"
+  }
+]

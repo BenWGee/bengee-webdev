@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Tutorial Info",
+    "content": "Hello, this is a page to share your important links with minimal coding.",
+    "type": "text",
+    "icon": "ℹ️"
+  },
+  {
+    "title": "How does this work?",
+    "content": "This text, and the links below dynamically displayed based on the content of a text file (json file). Follow these steps and you can make your own site!",
+    "type": "text",
+    "icon": "❓"
+  },
+  {
+    "title": "Things you need!",
+    "content": "A Github account, a web browser, and a text editor. Notepad will do, but something like Notepad++ or VSCode can make things easier as they will highlight the code.",
+    "type": "text",
+    "icon": "✅"
+  },
+  {
+    "title": "How can people visit my website?",
+    "content": "Github has a features called 'Github Pages'. It allows you to host a small website for free. There are some limitations. But nothing that will imapct this project. Follow the Github pages quickstart guide below to get that setup.",
+    "type": "text",
+    "icon": "✅"
+  },
+  {
+    "title": "Github Repository",
+    "content": "https://github.com/BenWGee/bengee-webdev",
+    "type": "url",
+    "icon": "💻"
+  },
+  {
+    "title": "Github Repository",
+    "content": "https://github.com/BenWGee/bengee-webdev",
+    "type": "url",
+    "icon": "💻"
+  },
+  {
+    "title": "Github Pages Quickstart",
+    "content": "https://docs.github.com/en/pages/quickstart",
+    "type": "url",
+    "icon": "📃"
+  }
+]
