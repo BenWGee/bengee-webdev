@@ -4,18 +4,28 @@ This repo hosts my websites. Each folder has something a little different. They 
 
 The sections are outlined below. 
 
- # links and tnm_links
+# links
 
- Both folders follow the same idea. They are a "Link Tree" style website. One is for my personal projects, the other is for a Magic the Gathering club I run. 
+# My Links
 
- The HTML is populated dynamically using content saved in a json file. Here's a snippet below for the format.
+A lightweight, data-driven link page. All content and theming is controlled through JSON files — no code changes needed to add links, swap colors, or update page text.
+
+See the full explanation in `links/README.md`. 
+
+TLDR: If you want a link-tree style page, but don't want to write a bunch of new HTML every time you want to add a new link, check this out. 
+
+---
+
+# tnm_links
+
+ A website populated with links based on a json file for the "Tuesday Night Magic" games club. This is an earlier version of what would be seen in the `links` folder.
 
  ````
 [
   {
     "title": "My Repo",
     "type": "link",
-    "url": "https://github.com/BenWGee/bengee-webdev/tree/main",
+    "content": "https://github.com/BenWGee/bengee-webdev/tree/main",
     "icon": "💻"
   },
   {
@@ -26,8 +36,6 @@ The sections are outlined below.
   },
 ]
 ````
-
-You can copy all the relevant code, then drop in your own json for a personal link site. The text "type" also allows you to publish text instead of links.
 
 # new-trees
 
