@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carlow</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    h2 { margin-top: 2rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem 1rem; text-align: left; }
+    th { background: #f0f0f0; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Carlow</h1>
+
+  <h2>Today's Weather</h2>
+  <p class="error" id="weather-error"></p>
+  <table id="weather-table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Station Departures</h2>
+  <p class="error" id="train-error"></p>
+  <table id="train-table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const WEATHER_API_URL = "https://www.met.ie/Open_Data/xml/county_forecast.xml";
+    const TRAIN_API_URL   = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByCodeXML_WithNumMins?StationCode=CRLOW&NumMins=120";
+
+    async function fetchWeather() {
+      const response = await fetch(WEATHER_API_URL);
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+
+      const xml = new DOMParser().parseFromString(await response.text(), "text/xml");
+
+      const county = [...xml.getElementsByTagName("county")].find(c =>
+        c.getElementsByTagName("name")[0]?.textContent?.trim().toUpperCase() === "CARLOW"
+      );
+      if (!county) throw new Error("Carlow not found in weather data.");
+
+      const today = new Date().toISOString().slice(0, 10);
+      const todayNode = [...county.getElementsByTagName("day")].find(d =>
+        (d.getElementsByTagName("date")[0]?.textContent ?? "").startsWith(today)
+      );
+      if (!todayNode) throw new Error("No forecast found for today.");
+
+      const fields = {
+        min_temp:      "Min Temp (°C)",
+        max_temp:      "Max Temp (°C)",
+        weather:       "Conditions",
+        wind_speed:    "Wind Speed (km/h)",
+        wind_dir:      "Wind Direction",
+        rainfall_6_18: "Rainfall 6am–6pm (mm)",
+        rainfall_18_6: "Rainfall 6pm–6am (mm)",
+      };
+
+      document.querySelector("#weather-table thead").innerHTML = `<tr><th>Field</th><th>Value</th></tr>`;
+      document.querySelector("#weather-table tbody").innerHTML = Object.entries(fields).map(([key, label]) => {
+        const value = todayNode.getElementsByTagName(key)[0]?.textContent?.trim() ?? "";
+        return `<tr><td>${label}</td><td>${value}</td></tr>`;
+      }).join("");
+    }
+
+    async function fetchTrains() {
+      const response = await fetch(TRAIN_API_URL);
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+
+      const xml = new DOMParser().parseFromString(await response.text(), "text/xml");
+      const trains = [...xml.getElementsByTagName("objStationData")];
+
+      if (trains.length === 0) {
+        document.getElementById("train-error").textContent = "No trains in the next 120 minutes.";
+        return;
+      }
+
+      const fields = {
+        Destination:     "Destination",
+        Exparrival:      "Carlow Arrival",
+        Destinationtime: "Destination Arrival",
+        Status:          "Status",
+        Duein:           "Due In (mins)",
+        Late:            "Late (mins)",
+      };
+
+      document.querySelector("#train-table thead").innerHTML =
+        `<tr>${Object.values(fields).map(l => `<th>${l}</th>`).join("")}</tr>`;
+      document.querySelector("#train-table tbody").innerHTML = trains.map(train =>
+        `<tr>${Object.keys(fields).map(f => `<td>${train.getElementsByTagName(f)[0]?.textContent ?? ""}</td>`).join("")}</tr>`
+      ).join("");
+    }
+
+    fetchWeather().catch(err => {
+      document.getElementById("weather-error").textContent = `Weather error: ${err.message}`;
+    });
+    fetchTrains().catch(err => {
+      document.getElementById("train-error").textContent = `Train error: ${err.message}`;
+    });
+  </script>
+</body>
+</html>
