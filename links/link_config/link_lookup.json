@@ -35,8 +35,8 @@
         "name": "tower",
         "file": "bm_tower_of_power.json",
         "theme": "yellow dark",
-        "page_title": "The BM Tower of Power",
-        "page_subtitle": "Things we experienced.",
+        "page_title": "The Tower of Babbling",
+        "page_subtitle": "Things we experienced",
         "page_footer": "Lists are silly."
     }
 ]
