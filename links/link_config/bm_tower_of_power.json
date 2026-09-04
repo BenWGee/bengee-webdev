@@ -1,32 +1,37 @@
 [
   {
+    "title": "Photography",
+    "content": "vs Fog Land",
+    "type": "text",
+    "icon": "📷"
+  },
+  {
+    "title": "Fog Land",
+    "content": "vs Photgraphy",
+    "type": "text",
+    "icon": "🌫️"
+  }  {
+    "title": "Sumo",
+    "content": "vs Brazillian Jiu-Jitsu",
+    "type": "text",
+    "icon": "🎎"
+  },
+  {
+    "title": "Brazilian Jiu-Jitsu",
+    "content": "vs Sumo",
+    "type": "text",
+    "icon": "🥷"
+  },
+    {
     "title": "Saga",
-    "content": "Comic",
+    "content": "vs Hunter the Parenting",
     "type": "text",
     "icon": "📖"
   },
   {
-    "title": "Brazilian Jiu-Jitsu",
-    "content": "Martial Arts",
-    "type": "text",
-    "icon": "🥷"
-  },
-  {
-    "title": "Fog Land",
-    "content": "Comic",
-    "type": "text",
-    "icon": "🌫️"
-  },
-  {
     "title": "Hunter the Parenting",
-    "content": "YouTube Series",
+    "content": "vs Saga",
     "type": "text",
     "icon": "🧛"
-  },
-  {
-    "title": "Photography",
-    "content": "Take Pictures",
-    "type": "text",
-    "icon": "📷"
   }
 ]
