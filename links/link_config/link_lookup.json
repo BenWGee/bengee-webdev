@@ -33,10 +33,10 @@
     },
     {
         "name": "Tower of Power",
-        "file": "tutorial_links.json",
-        "theme": "blue light",
-        "page_title": "Make Your Own Link Page",
-        "page_subtitle": "Sites you want to share",
-        "page_footer": "Anyone can do it!"
+        "file": "bm_tower_of_power.json",
+        "theme": "white dark",
+        "page_title": "The BM Tower of Power",
+        "page_subtitle": "Things we experienced.",
+        "page_footer": "Lists are silly."
     }
 ]
