@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Saga",
+    "content": "Comic",
+    "type": "text",
+    "icon": "📖"
+  },
+  {
+    "title": "Brazilian Jiu-Jitsu",
+    "content": "Martial Arts",
+    "type": "text",
+    "icon": "🥷"
+  },
+  {
+    "title": "Fog Land",
+    "content": "Comic",
+    "type": "text",
+    "icon": "🌫️"
+  },
+  {
+    "title": "Hunter the Parenting",
+    "content": "YouTube Series",
+    "type": "text",
+    "icon": "🧛"
+  },
+  {
+    "title": "Photography",
+    "content": "Take Pictures",
+    "type": "text",
+    "icon": "📷"
+  }
+]
