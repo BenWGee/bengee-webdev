@@ -30,5 +30,13 @@
         "page_title": "Make Your Own Link Page",
         "page_subtitle": "Sites you want to share",
         "page_footer": "Anyone can do it!"
+    },
+    {
+        "name": "Tower of Power",
+        "file": "tutorial_links.json",
+        "theme": "blue light",
+        "page_title": "Make Your Own Link Page",
+        "page_subtitle": "Sites you want to share",
+        "page_footer": "Anyone can do it!"
     }
 ]
