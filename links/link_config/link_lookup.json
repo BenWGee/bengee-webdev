@@ -34,7 +34,7 @@
     {
         "name": "tower",
         "file": "bm_tower_of_power.json",
-        "theme": "white dark",
+        "theme": "yellow dark",
         "page_title": "The BM Tower of Power",
         "page_subtitle": "Things we experienced.",
         "page_footer": "Lists are silly."
