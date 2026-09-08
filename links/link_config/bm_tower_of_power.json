@@ -34,5 +34,17 @@
     "content": "vs Saga",
     "type": "text",
     "icon": "🧛"
+  },
+    {
+    "title": "Pseudoregalia",
+    "content": "vs Might and Magic Dark Mesiah",
+    "type": "text",
+    "icon": "🐑"
+  },
+  {
+    "title": "Might and Magic Dark Mesiah",
+    "content": "Pseudoregalia",
+    "type": "text",
+    "icon": "🧙‍♀️"
   }
 ]
