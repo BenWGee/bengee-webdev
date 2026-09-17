@@ -38,5 +38,13 @@
         "page_title": "The Tower of Babbling",
         "page_subtitle": "Things we experienced",
         "page_footer": "Lists are silly."
+    },
+    {
+        "name": "hire",
+        "file": "hire.json",
+        "theme": "blue light",
+        "page_title": "Ben Guilfoyle's Page of Links",
+        "page_subtitle": "Feel free to look around",
+        "page_footer": "Thanks for visiting"
     }
 ]
