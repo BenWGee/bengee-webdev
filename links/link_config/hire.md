@@ -1,1 +1,32 @@
-
+[
+    {
+        "title": "Who are you?",
+        "content": "Ben Guilfoyle, observability engineer and writer, here are links to thinks you may find useful!",
+        "type": "text",
+        "icon" "👋"
+    },
+    {
+        "title": "LinkedIn",
+        "content": "https://www.linkedin.com/in/benjamin-guilfoyle-277130151/",
+        "type": "link",
+        "icon" "💼"
+    },
+    {
+        "title": "GitHub",
+        "content": "https://github.com/BenWGee",
+        "type": "link",
+        "icon" "💻"
+    },
+    {
+        "title": "Writing Work",
+        "content": "https://www.threeforonetrading.com/en/author/bguilfoyle",
+        "type": "link",
+        "icon" "📝"
+    },
+    {
+        "title": "Cribl Certified Engineer",
+        "content": "https://certifications.cribl.io/dfe19da1-afa7-45c3-a3b4-9f9c2415e956#acc.8V7pmscC",
+        "type": "link",
+        "icon" "🛠️"
+    }
+]
