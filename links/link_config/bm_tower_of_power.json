@@ -46,5 +46,17 @@
     "content": "Pseudoregalia",
     "type": "text",
     "icon": "🧙‍♀️"
+  },
+  {
+    "title": "Foraging",
+    "content": "Denshattack",
+    "type": "text",
+    "icon": "🌿"
+  },
+  {
+    "title": "Denshattack",
+    "content": "Foraging",
+    "type": "text",
+    "icon": "🚉"
   }
 ]
