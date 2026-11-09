@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(123, 158, 158);
+}
+
+/* Flat-top hexagons laid out as 3 columns of 4, 5, 4 (13 total).
+   --w is the hex width; height of a flat-top hex is w * 0.866. */
+#hexGrid {
+  --w: min(34vw, 220px);
+  --h: calc(var(--w) * 0.866025);
+  --gap: 0px;
+  --line: 5px; /* half the visible border; neighbours double it */
+  position: relative;
+  width: calc(var(--w) * 2.5 + var(--gap) * 2);
+  height: calc(var(--h) * 5 + var(--gap) * 4);
+  margin: 20px auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.hex {
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  /* default: middle column, left offset set below */
+  left: calc(var(--w) * 0.75 + var(--gap));
+  /* black hexagon behind the image forms the border */
+  background: #000;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+.hexIn {
+  position: absolute;
+  inset: var(--line);
+  overflow: hidden;
+  /* flat edge on top and bottom */
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+.hexLink {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hex h1, .hex p {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  overflow: hidden;
+  transition: transform .2s ease-out, opacity .3s ease-out;
+}
+.hex h1 {
+  bottom: 50%;
+  font-size: 1.2em;
+  z-index: 1;
+  transform: translate3d(0, -100%, 0);
+}
+.hex p {
+  top: 50%;
+  font-size: 0.7em;
+  transform: translate3d(0, 100%, 0);
+}
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h1, .hexLink:focus h1,
+.hexLink:hover p, .hexLink:focus p {
+  transform: translate3d(0, 0, 0);
+}
+
+/*** POSITIONING: columns of 4 (left), 5 (middle), 4 (right) ***************************/
+/* left column: hexes 1-4, shifted down half a hex */
+.hex:nth-child(-n+4) {
+  left: 0;
+  top: calc((var(--h) + var(--gap)) * (var(--i) + 0.5));
+}
+/* middle column: hexes 5-9 */
+.hex:nth-child(n+5):nth-child(-n+9) {
+  top: calc((var(--h) + var(--gap)) * var(--i));
+}
+/* right column: hexes 10-13, shifted down half a hex */
+.hex:nth-child(n+10) {
+  left: calc(var(--w) * 1.5 + var(--gap) * 2);
+  top: calc((var(--h) + var(--gap)) * (var(--i) + 0.5));
+}
+
+/* row index within each column */
+.hex:nth-child(1), .hex:nth-child(5), .hex:nth-child(10) { --i: 0; }
+.hex:nth-child(2), .hex:nth-child(6), .hex:nth-child(11) { --i: 1; }
+.hex:nth-child(3), .hex:nth-child(7), .hex:nth-child(12) { --i: 2; }
+.hex:nth-child(4), .hex:nth-child(8), .hex:nth-child(13) { --i: 3; }
+.hex:nth-child(9) { --i: 4; }
+
+@media (max-width: 400px) {
+  #hexGrid {
+    font-size: 13px;
+  }
+}
