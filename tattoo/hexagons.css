@@ -73,7 +73,16 @@ body {
 .hex h1 {
   bottom: 50%;
   font-size: 1.2em;
+  line-height: 1.15;
   z-index: 1;
+  /* the hex narrows toward the top, so keep text in the wide lower part,
+     inset from the sides, and let it wrap onto multiple lines */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 18% 4%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   transform: translate3d(0, -100%, 0);
 }
 .hex p {
